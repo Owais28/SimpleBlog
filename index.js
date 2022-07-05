@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 
 const path = require('path')
-const port = 2882;
+const port = process.env.PORT || 3000;
 const ejs = require('ejs')
 
 app.use(express.static('public'))
