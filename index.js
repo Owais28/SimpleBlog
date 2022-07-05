@@ -1,6 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
+// const { MongoClient } = require("mongodb");
 
+const uri = "mongodb+srv://heroku-server-blog:5MrMbZva21tGI49m.mongodb.net/my_database?retryWrites=true&w=majority";
 const app = express()
 
 const bodyParser = require('body-parser')
@@ -9,7 +11,7 @@ const port = process.env.PORT || 3000;
 const ejs = require('ejs')
 
 const BlogPost = require('./models/BlogPost')
-mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true});
+
 
 app.use(express.static('public'))
 app.set('view engine','ejs')
@@ -57,3 +59,5 @@ app.post('/posts/store', async(req,res)=>{
 // app.get('/about', (req,res)=>{
 //     res.sendFile(path.resolve(__dirname,'about.html'))
 // })
+
+// 5MrMbZva21tGI49m
